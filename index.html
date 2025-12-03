@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #0c0c0c;
+      color: #e5e5e5;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      width: 100%;
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      background: rgba(15,15,15,0.7);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    nav h1 {
+      font-weight: 600;
+      font-size: 28px;
+      color: #ffffff;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 16px;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+    .hero {
+      height: 30vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 6%;
+      margin-top: 20vh;
+    }
+
+    /* PROFILE PIC*/
+    .profile-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: url('your-profile.jpg') center/cover no-repeat;
+      border: 4px solid #5a5aff;
+      box-shadow: 0 0 25px #5a5aff;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* GLOW STREAK ORBIT */
+    .orbit {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top: 2px solid #5a5aff;
+      border-right: 2px solid #5a5aff;
+      animation: orbit 4s linear infinite;
+      top: -20px;
+      left: -20px;
+      opacity: 0.35;
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      margin-top: 12px;
+      max-width: 380px;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 10px 25px;
+      background: #1f1f1f;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.25s;
+      border: 1px solid #333;
+    }
+
+    .btn:hover { background: #333; }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 6%;
+    }
+    section h2 {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    /* PROJECT GRID */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #141414;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #444;
+    }
+
+    /* TECH SKILLS */
+    .skills {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 8px 16px;
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #cfcfcf;
+    }
+
+    /* CONTACT BOX */
+    .contact-box {
+      background: #141414;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 380px;
+      border: 1px solid #222;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>MyPortfolio</h1>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="profile-wrapper">
+      <div class="profile-pic"><img src="RDT_20251004_113604315126534299839245.jpg" alt="" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;"></div>
+      <div class="orbit"></div>
+    </div>
+
+    <h2>Hello, I'm <span style="color:#5a5aff;">Akshay Marothiya</span></h2>
+    <p>Developer who builds interactive experiences.</p>
+
+  </div>
+<!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+      <div class="project-card" onclick="window.open('https://github.com/AKshayM-OP/AI-ChatBot')" style="cursor:pointer;">
+        <h3>AI-ChatBot</h3>
+        <p>ChatBot powered by Google Gemini which present provide simple solution to most answer</p>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+      <div class="skill">HTML / CSS / JS</div>
+      <div class="skill">Blender</div>
+      <div class="skill">Premiere Pro</div>
+      <div class="skill">Unity</div>
+      <div class="skill">Photoshop</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="max-width:600px;">
+      Hi! I am Student who loves and have passion to make video games.
+      <br>
+      I also like building websites and create 3d renders for fun. 
+    </p>
+  </section>
+
+  
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+      <p><b>Email:</b> 000@gmail.com</p>
+      <p><b>PhoneNo.:</b> 0000000000</p>
+    </div>
+  </section>
+
+  <footer>2025 Akshay Marothiya</footer>
+
+</body>
+</html>
